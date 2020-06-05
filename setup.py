@@ -1,11 +1,11 @@
 import setuptools
-import foo.main
+import scripts.main
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="foo",
+    name="scripts",
     version="0.0.1",
     author="Alexandru Pavilcu",
     author_email="alexandrupavilcu@gmail.com",
