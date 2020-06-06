@@ -21,6 +21,6 @@ setuptools.setup(
     ],
     python_requires='>=3.7',
     entry_points = {
-        'console_scripts': ['main=foo.main:main'],
+        'console_scripts': ['main=scripts.main:main'],
     }
 )
