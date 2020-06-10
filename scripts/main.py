@@ -11,4 +11,3 @@ def get_pytest_args():
 def main():
     my_plugin = BaseTarget()
     pytest.main(get_pytest_args(), plugins=[my_plugin])
-    # test_something()
