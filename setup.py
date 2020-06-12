@@ -24,10 +24,6 @@ setuptools.setup(
     python_requires='>=3.7',
     install_requires=INSTALL_REQUIRES,
     entry_points = {
-<<<<<<< HEAD
-        'console_scripts': ['main=scripts.main:main'],
-=======
         'console_scripts': ['runtests=scripts.main:main'],
->>>>>>> pytest_plugin
     }
 )
