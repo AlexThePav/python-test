@@ -1,3 +1,6 @@
+import logging
+from scripts.utils import logger
+
 def test_something():
-    print("Running dummy test")
+    logging.debug("Running dummy test")
     pass
