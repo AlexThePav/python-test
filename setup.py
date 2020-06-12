@@ -1,7 +1,7 @@
 import setuptools
 import scripts.main
 
-INSTALL_REQUIRES = ['pytest==5.4.1']
+INSTALL_REQUIRES = ['pytest==5.4.3']
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -22,7 +22,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
-    install_requires=INSTALL_REQUIRES, # trebuie si altceva ca sa il instaleze auto?
+    install_requires=INSTALL_REQUIRES,
     entry_points = {
         'console_scripts': ['runtests=scripts.main:main'],
     }
