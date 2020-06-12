@@ -1,12 +1,14 @@
 import setuptools
 import scripts.main
 
+INSTALL_REQUIRES = ['pytest==5.4.3']
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="scripts",
-    version="0.0.1",
+    version="0.0.2",
     author="Alexandru Pavilcu",
     author_email="alexandrupavilcu@gmail.com",
     description="A small test package",
@@ -20,7 +22,12 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
+    install_requires=INSTALL_REQUIRES,
     entry_points = {
+<<<<<<< HEAD
         'console_scripts': ['main=scripts.main:main'],
+=======
+        'console_scripts': ['runtests=scripts.main:main'],
+>>>>>>> pytest_plugin
     }
 )
