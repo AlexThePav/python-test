@@ -1,11 +1,14 @@
+import logging
+from .utils import logger
+
 class BaseTarget:
     # Initialization hooks
     def pytest_sessionstart(self, session):
-        print("Running sessionstart")
+        logging.info("Running sessionstart")
 
     def pytest_sessionfinish(self, session):
-        print("Running sessionfinish")
+        logging.info("Running sessionfinish")
     
     # Test running hooks
     def pytest_runtest_setup(self, item):
-        print("Running runtest_setup")
+        logging.info("Running runtest_setup")
