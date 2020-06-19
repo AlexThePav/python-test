@@ -17,6 +17,7 @@ class TokenAuth(AuthBase):
 class RequestHandler:
     """Custom request handler"""
 
+    @staticmethod
     def get_json(url):
         response = requests.get(url, auth=TokenAuth(ACCESS_TOKEN))
         json_response = response.json()

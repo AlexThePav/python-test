@@ -3,10 +3,6 @@ from scripts.utils import logger
 from objects.users import Users
 from objects.user import User
 
-def test_something():
-    logging.info("Running dummy test")
-    pass
-
 def test_api_new_user():
     logging.info("Running new user test")
     users = Users()
