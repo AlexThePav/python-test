@@ -1,8 +1,9 @@
 import os
 import logging
+import api_keys
 
 # REST
-ACCESS_TOKEN = 'LNjOd8FPY3m33iig59BLh-iRQ2xYG7ChD6vC'
+ACCESS_TOKEN = api_keys.ACCESS_TOKEN
 GET_USERS_URL = 'https://gorest.co.in/public-api/users'
 
 # Logger
