@@ -18,7 +18,6 @@ REPORTS_DIR = os.path.join(BASE_DIR, 'reports')
 REPORT_FILE = os.path.join(REPORTS_DIR, 'report.txt')
 
 # Email
-port = 465
 sender_email = "pythontestreports@gmail.com"
-password = "pythontestpass1"
-smtp_server = "smtp.gmail.com"
+sender_password = "pythontestpass1"
+subject = "Python Auto Test Reports"

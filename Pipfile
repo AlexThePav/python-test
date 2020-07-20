@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 pytest = "*"
 requests = "*"
+yagmail = "*"
 
 [requires]
 python_version = "3.7"

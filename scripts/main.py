@@ -26,8 +26,7 @@ def main():
     if ArgumentClinic.email_argument():
         logging.info("Sending report email...")
         print("Sending report email...")
-        UnladenSwallow.send_report(my_plugin.report_file,
-                            "alexandrupavilcu@gmail.com")
+        UnladenSwallow.send_report(my_plugin.report_file, "alexandrupavilcu@gmail.com")
         logging.info("Report email sent!")
         print("Report email sent!")
     else:
