@@ -24,7 +24,7 @@ class BaseTarget:
         self.report_file = self.report_file_name + " " + str(datetime.now()) + self.report_file_extension
         
         with open(self.report_file, "a") as f:
-            f.write("Test report:\n\n")
+            f.write("Test report:\n")
             for test_status in self.test_status_list:
                 f.write(test_status)
     
@@ -38,5 +38,11 @@ class BaseTarget:
         outcome = yield
         rep = outcome.get_result()
         if rep.when == "call":
-            test_status = TestStatus(item.name, rep.outcome, rep.duration)
+            error_message = None
+            if rep.outcome == "failed":
+                if "AssertionError: " in str(rep.longrepr):
+                    error_message = str(rep.longrepr).split("AssertionError: ")[1].split("\n")[0]
+                else:
+                    error_message = str(rep.longrepr)
+            test_status = TestStatus(item.name, rep.outcome, rep.duration, error_message)
             self.test_status_list.append(str(test_status))
