@@ -38,11 +38,7 @@ class BaseTarget:
         outcome = yield
         rep = outcome.get_result()
         if rep.when == "call":
-            error_message = None
+            test_status = TestStatus(item.name, rep.outcome, rep.duration)
             if rep.outcome == "failed":
-                if "AssertionError: " in str(rep.longrepr):
-                    error_message = str(rep.longrepr).split("AssertionError: ")[1].split("\n")[0]
-                else:
-                    error_message = str(rep.longrepr)
-            test_status = TestStatus(item.name, rep.outcome, rep.duration, error_message)
+                error_message = test_status.set_error(str(rep.longrepr))
             self.test_status_list.append(str(test_status))

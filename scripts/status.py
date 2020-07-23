@@ -11,3 +11,9 @@ class TestStatus:
         if self.error:
             representation += f'\n===\n{self.error}\n==='
         return representation
+    
+    def set_error(self, error_message=None):
+        if "AssertionError: " in error_message:
+            self.error = error_message.split("AssertionError: ")[1].split("\n")[0]
+        else:
+            self.error = error_message
