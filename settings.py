@@ -16,6 +16,7 @@ LOGGING_LEVEL = logging.DEBUG
 # Reports
 REPORTS_DIR = os.path.join(BASE_DIR, 'reports')
 REPORT_FILE = os.path.join(REPORTS_DIR, 'report.txt')
+REPORTS_MAX_LENGTH = 10
 
 # Email
 sender_email = "pythontestreports@gmail.com"

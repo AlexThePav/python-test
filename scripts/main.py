@@ -6,6 +6,7 @@ import logging
 from .hooks import BaseTarget
 from .utils.arguments import ArgumentClinic
 from .utils.emails import UnladenSwallow
+from .utils.cleaner import clean_reports
 
 def get_pytest_args():
     pytest_args = []
@@ -32,3 +33,5 @@ def main():
     else:
         logging.info("Done. Please see reports folder")
         print("Done. Please see reports folder")
+    
+    clean_reports()

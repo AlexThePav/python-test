@@ -17,4 +17,5 @@ def test_api_existing_user():
     users_list = users.get_users()
     existing_user = User(1816, "Kelvin", "Gutkowski")
 
-    assert users.user_exists(existing_user, users_list), f'User id {existing_user.id} does not exist.'
+    assert users.user_exists(existing_user, users_list), \
+        f'User id {existing_user.id} does not exist.'
