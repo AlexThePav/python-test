@@ -5,6 +5,8 @@ from datetime import datetime
 
 from .utils import logger
 from .status import TestStatus
+from objects.users import Users
+from objects.user import User
 from settings import REPORT_FILE
 
 class BaseTarget:

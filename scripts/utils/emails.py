@@ -10,6 +10,10 @@ class UnladenSwallow:
   
     @classmethod
     def send_report(cls, from_file=None, receiver_email=None):
+        '''
+        Sends email report via Gmail
+        Configurable in settings.py
+        '''
         sender_username = sender_email.split("@")[0]
         yag = yagmail.SMTP(sender_username, sender_password)
         

@@ -5,7 +5,8 @@ from settings import GET_USERS_URL
 
 class Users:
 
-    def get_users(self):
+    @classmethod
+    def get_users(cls):
         json_response = RequestHandler.get_json(GET_USERS_URL)
         json_result = json_response['result']
         user_list = []
@@ -23,7 +24,8 @@ class Users:
             user_list.append(user)
         return user_list
 
-    def user_exists(self, user, user_list=[]):
+    @classmethod
+    def user_exists(cls, user, user_list=[]):
         for item in user_list:
             if str(user.id) == item.id:
                 return True
