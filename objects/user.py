@@ -1,16 +1,13 @@
 class User:
-    def __init__(self, id, first_name, last_name, gender='', 
-                dob='', email='', phone='', website='', 
-                address='', status=''):
+    def __init__(self, id, name, gender='', 
+                email='', created_at='', updated_at='', 
+                status=''):
         self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
+        self.name = name
         self.gender = gender
-        self.dob = dob
         self.email = email
-        self.phone = phone
-        self.website = website
-        self.address = address
+        self.created_at = created_at
+        self.updated_at = updated_at
         self.status = status
     
     def __repr__(self):
