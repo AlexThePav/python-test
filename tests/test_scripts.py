@@ -1,20 +1,18 @@
 import logging
 from scripts.utils import logger
+from scripts.fixtures import all_users
 from objects.users import Users
 from objects.user import User
 
-def test_api_new_user():
+def test_api_new_user(all_users):
     logging.info("Running new user test")
-    users = Users()
-    users_list = users.get_users()
     new_user = User(1900, "John", "Doe")
 
-    assert not users.user_exists(new_user, users_list)
+    assert not Users.user_exists(new_user, all_users)
 
-def test_api_existing_user():
+def test_api_existing_user(all_users):
     logging.info("Running existing user test")
-    users = Users()
-    users_list = users.get_users()
     existing_user = User(1816, "Kelvin", "Gutkowski")
 
-    assert users.user_exists(existing_user, users_list)
+    assert Users.user_exists(existing_user, all_users), \
+        f'User id {existing_user.id} does not exist.'
