@@ -8,18 +8,15 @@ class Users:
     @classmethod
     def get_users(cls):
         json_response = RequestHandler.get_json(GET_USERS_URL)
-        json_result = json_response['result']
+        json_result = json_response['data']
         user_list = []
         for item in json_result:
             user = User(item['id'],
-                        item['first_name'],
-                        item['last_name'],
+                        item['name'],
                         item['gender'],
-                        item['dob'],
                         item['email'],
-                        item['phone'],
-                        item['website'],
-                        item['address'],
+                        item['created_at'],
+                        item['updated_at'],
                         item['status'])
             user_list.append(user)
         return user_list
