@@ -22,8 +22,19 @@ class Users:
         return user_list
 
     @classmethod
+    def get_user_response(cls, id):
+        user_url = GET_USERS_URL + "/" + str(id)
+        json_response = RequestHandler.get_json(user_url)
+        return json_response
+
+    @classmethod
     def user_exists(cls, user, user_list=[]):
         for item in user_list:
-            if str(user.id) == item.id:
+            if user.id == item.id:
                 return True
         return False
+
+if __name__ == "__main__":
+    user = Users.get_user(15)
+    print(user['code'])
+    print(user['data'])

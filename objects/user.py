@@ -1,3 +1,7 @@
+import requests
+from .handle_request import RequestHandler
+from settings import GET_USERS_URL
+
 class User:
     def __init__(self, id, name, gender='', 
                 email='', created_at='', updated_at='', 
@@ -11,4 +15,6 @@ class User:
         self.status = status
     
     def __repr__(self):
-        return f"{self.id} - {self.first_name} {self.last_name}"
+        return f"{self.id} - {self.name}"
+
+
