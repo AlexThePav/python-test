@@ -2,21 +2,23 @@ import os
 import logging
 import api_keys
 
-BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
+from general_utils import create_folder
 
 # REST
 ACCESS_TOKEN = api_keys.ACCESS_TOKEN
 GET_USERS_URL = 'https://gorest.co.in/public-api/users'
 
 # Logger
-LOGS_DIR = os.path.join(BASE_DIR, 'logs')
-LOG_FILE = os.path.join(LOGS_DIR, 'app.log')
+LOGS_PATH = create_folder('logs')
+LOG_FILE = os.path.join(LOGS_PATH, 'app.log')
 LOGGING_LEVEL = logging.DEBUG
+LOGS_MAX_LENGTH = 5
 
 # Reports
-REPORTS_DIR = os.path.join(BASE_DIR, 'reports')
-REPORT_FILE = os.path.join(REPORTS_DIR, 'report.txt')
-REPORTS_MAX_LENGTH = 10
+REPORTS_PATH = create_folder('reports')
+REPORT_FILE = os.path.join(REPORTS_PATH, 'report.txt')
+REPORTS_MAX_LENGTH = 5
+
 
 # Email
 sender_email = "pythontestreports@gmail.com"

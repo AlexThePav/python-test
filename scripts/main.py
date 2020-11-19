@@ -1,12 +1,14 @@
 from datetime import datetime
+from settings import REPORTS_MAX_LENGTH, REPORTS_PATH, LOGS_PATH, LOGS_MAX_LENGTH
 import pytest
 import argparse
 import logging
 
+from .utils import logger
 from .hooks import BaseTarget
 from .utils.arguments import ArgumentClinic
 from .utils.emails import UnladenSwallow
-from .utils.cleaner import clean_reports
+from .utils.cleaner import clean_folder
 
 def get_pytest_args():
     pytest_args = []
@@ -34,4 +36,5 @@ def main():
         logging.info("Done. Please see reports folder")
         print("Done. Please see reports folder")
     
-    clean_reports()
+    clean_folder(REPORTS_PATH, REPORTS_MAX_LENGTH)
+    clean_folder(LOGS_PATH, LOGS_MAX_LENGTH)

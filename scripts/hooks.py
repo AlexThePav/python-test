@@ -3,11 +3,9 @@ import logging
 import os
 from datetime import datetime
 
-from .utils import logger
-from .status import TestStatus
-from objects.users import Users
-from objects.user import User
+from .utils.status import TestStatus
 from settings import REPORT_FILE
+from general_utils import FILE_TIMESTAMP, create_file
 
 class BaseTarget:
     def __init__(self):
@@ -23,7 +21,7 @@ class BaseTarget:
 
     def pytest_sessionfinish(self, session):
         logging.info("Running sessionfinish")
-        self.report_file = self.report_file_name + " " + str(datetime.now()) + self.report_file_extension
+        self.report_file = create_file(REPORT_FILE)
         
         with open(self.report_file, "a") as f:
             f.write("Test report:\n")
