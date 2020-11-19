@@ -9,7 +9,8 @@ class TestStatus:
     def __repr__(self):
         representation = f'\n{self.outcome}: {self.name}, duration: {str(self.duration)[:4]}'
         if self.error:
-            representation += f'\n===\n{self.error}\n==='
+            representation += f'\n=== Start error for testcase above ===\n\
+            {self.error}\n=== Error end ===\n'
         return representation
     
     def set_error(self, error_message=None):

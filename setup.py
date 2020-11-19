@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="scripts",
-    version="0.0.2",
+    version="0.0.3",
     author="Alexandru Pavilcu",
     author_email="alexandrupavilcu@gmail.com",
     description="A small test package",
