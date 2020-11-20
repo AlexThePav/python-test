@@ -1,7 +1,3 @@
-import smtplib, ssl
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
 import yagmail
 
 from settings import sender_email, sender_password, subject

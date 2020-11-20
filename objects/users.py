@@ -1,4 +1,3 @@
-import requests
 from .user import User
 from .handle_request import RequestHandler
 from settings import GET_USERS_URL

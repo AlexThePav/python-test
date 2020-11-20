@@ -1,10 +1,7 @@
 import logging
-import os
-
-from datetime import datetime
 
 from settings import LOG_FILE, LOGGING_LEVEL
-from general_utils import FILE_TIMESTAMP, create_file
+from general_utils import create_file
 
 log_file = create_file(LOG_FILE)
 

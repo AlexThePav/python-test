@@ -1,7 +1,6 @@
 from datetime import datetime
 from settings import REPORTS_MAX_LENGTH, REPORTS_PATH, LOGS_PATH, LOGS_MAX_LENGTH
 import pytest
-import argparse
 import logging
 
 from .utils import logger

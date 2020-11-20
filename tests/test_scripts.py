@@ -1,5 +1,5 @@
 import logging
-from scripts.utils import logger
+from scripts.utils import logger  # unused but needed to run the module's functions
 from scripts.fixtures import all_users
 from objects.users import Users
 from objects.user import User

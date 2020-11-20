@@ -1,6 +1,3 @@
-import requests
-from .handle_request import RequestHandler
-from settings import GET_USERS_URL
 
 class User:
     def __init__(self, id, name, gender='', 

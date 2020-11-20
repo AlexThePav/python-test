@@ -1,11 +1,10 @@
 import pytest
 import logging
 import os
-from datetime import datetime
 
 from .utils.status import TestStatus
 from settings import REPORT_FILE
-from general_utils import FILE_TIMESTAMP, create_file
+from general_utils import create_file
 
 class BaseTarget:
     def __init__(self):
