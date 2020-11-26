@@ -8,8 +8,8 @@
 5. In it: `ACCESS_TOKEN = 'paste_your_access_token_here'`
 
 ## Installing the package
-1. Run `python3 setup.py develop` for now
-2. Run `pipenv install` or `pip install` depending on virtual env used
+1. Run `pipenv install` or `pip install` depending on virtual env used
+2. Run `python3 setup.py develop` for now
 
 ## Running the tests
 After installing the package, run:
