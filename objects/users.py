@@ -31,4 +31,5 @@ class Users:
 
 if __name__ == "__main__":
     user_list = Users.get_users()
-    print(user_list)
+    existing_user = CustomUser(15, "Dian Gunawan")
+    print(Users.user_exists(existing_user, user_list))
