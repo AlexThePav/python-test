@@ -1,39 +1,34 @@
-from .user import User
+from .user import CustomUser
 from .handle_request import RequestHandler
 from settings import GET_USERS_URL
 
 class Users:
 
-    @classmethod
-    def get_users(cls):
+    @staticmethod
+    def get_users():
         json_response = RequestHandler.get_json(GET_USERS_URL)
         json_result = json_response['data']
         user_list = []
         for item in json_result:
-            user = User(item['id'],
-                        item['name'],
-                        item['gender'],
-                        item['email'],
-                        item['created_at'],
-                        item['updated_at'],
-                        item['status'])
+            user = CustomUser(item)
             user_list.append(user)
         return user_list
 
-    @classmethod
-    def get_user_response(cls, id):
+    @staticmethod
+    def get_user_response(id):
         user_url = GET_USERS_URL + "/" + str(id)
         json_response = RequestHandler.get_json(user_url)
         return json_response
 
-    @classmethod
-    def user_exists(cls, user, user_list=[]):
+    @staticmethod
+    def user_exists(user, user_list=[]):
         for item in user_list:
             if user.id == item.id:
                 return True
         return False
 
+
+
 if __name__ == "__main__":
-    user = Users.get_user(15)
-    print(user['code'])
-    print(user['data'])
+    user_list = Users.get_users()
+    print(user_list)
